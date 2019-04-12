@@ -9,7 +9,7 @@ def error_rate_for_parameters(data, m, b):
         y = data[i, 1]
         sum_of_squared_error += ((((m * x) + b) - y) ** 2)
 
-    error_rate = sum_of_squared_error/(2*float(len(data)))
+    error_rate = sum_of_squared_error/(float(len(data)))
     return error_rate
 
 
@@ -55,7 +55,7 @@ def main():
 
     m, b = gradient_decent(data, initial_m, initial_b, learning_rate, number_of_iterations)
 
-    print(f"After 1000 iterations, m as {m} and b as {b} we get error {error_rate_for_parameters(data,m,b)}")
+    print(f"After {number_of_iterations} iterations, m as {m} and b as {b} we get error {error_rate_for_parameters(data,m,b)}")
 
 
 if __name__ == '__main__':
